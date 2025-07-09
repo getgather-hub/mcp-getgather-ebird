@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ebird-mcp"
+dynamic = ["version"]
+description = "A CLI tool for eBird MCP integration"
+readme = "README.md"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "faisal burhanudin", email = "faisalburhanudiN@gmail.com"},
+    {name = "scout callens", email = "scout@heyario.com"},
+]
+keywords = ["ebird", "mcp", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "fastmcp>=2.10.2",
+    "requests",
+]
+
+
+[project.scripts]
+ebird-mcp = "ebird_mcp.cli:main"
+
+[tool.hatch.version]
+path = "ebird_mcp/__init__.py"
